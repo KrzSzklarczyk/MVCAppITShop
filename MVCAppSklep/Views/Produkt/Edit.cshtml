@@ -1,0 +1,59 @@
+@model MVCAppSklep.Models.Produkt
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Produkt</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Nazwa" class="control-label"></label>
+                <input asp-for="Nazwa" class="form-control" />
+                <span asp-validation-for="Nazwa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cena" class="control-label"></label>
+                <input asp-for="Cena" class="form-control" />
+                <span asp-validation-for="Cena" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ilosc" class="control-label"></label>
+                <input asp-for="Ilosc" class="form-control" />
+                <span asp-validation-for="Ilosc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProducerId" class="control-label"></label>
+                <select asp-for="ProducerId" class="form-control" asp-items="ViewBag.ProducerId"></select>
+                <span asp-validation-for="ProducerId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KategoriaId" class="control-label"></label>
+                <select asp-for="KategoriaId" class="form-control" asp-items="ViewBag.KategoriaId"></select>
+                <span asp-validation-for="KategoriaId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CoverImage" class="control-label"></label>
+                <div class="custom-file">
+                    <input asp-for="CoverImage" class="custom-file-input" id="customFile">
+                    <label class="custom-file-label" for="customFile"></label>
+                    <span asp-validation-for="CoverImage" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
